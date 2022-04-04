@@ -1,0 +1,22 @@
+node_modules
+.DS_STORE
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+
+# Build output
+.next
+.next-tf
+
+# Temp files
+*.swp*
+
+# Log files
+*.log
+
+# direnv
+.direnv
+.envrc
+
