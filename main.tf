@@ -236,6 +236,7 @@ module "statics_deploy" {
   multiple_deployments_base_domain = var.multiple_deployments_base_domain
 
   lambda_role_permissions_boundary = var.lambda_role_permissions_boundary
+  lambda_timeout = var.lamda_timeout_static_deploy
 
   deployment_name = var.deployment_name
   tags            = var.tags

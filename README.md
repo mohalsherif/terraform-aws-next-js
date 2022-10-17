@@ -321,6 +321,7 @@ For a full list of available commands that can be used with `tf-next`, check the
 | lambda\_attach\_to\_vpc | Set to true if the Lambda functions should be attached to a VPC. Use this setting if VPC resources should be accessed by the Lambda functions. When setting this to true, use vpc\_security\_group\_ids and vpc\_subnet\_ids to specify the VPC networking. Note that attaching to a VPC would introduce a delay on to cold starts | `bool` | `false` | no |
 | lambda\_policy\_json | Additional policy document as JSON to attach to the Lambda Function role | `string` | `null` | no |
 | lambda\_role\_permissions\_boundary | ARN of IAM policy that scopes aws\_iam\_role access for the lambda | `string` | `null` | no |
+| lamda\_timeout\_static\_deploy| The default timeout set for the lambda static deploy function. Increment this if your deployments gets bigger to avoid a timeout in the lambda function during upload.  | `number` | `60` | no |
 | multiple\_deployments\_base\_domain | Default wildcard domain where new deployments should be available. Should be in the form of *.example.com. | `string` | `null` | no |
 | tags | Tag metadata to label AWS resources that support tags. | `map(string)` | `{}` | no |
 | tags\_s3\_bucket | Tag metadata to label AWS S3 buckets. Overrides tags with the same name in input variable tags. | `map(string)` | `{}` | no |
