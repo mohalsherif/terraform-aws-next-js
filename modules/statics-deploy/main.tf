@@ -1,6 +1,5 @@
 locals {
   manifest_key   = "_tf-next/deployment.json"
-  lambda_timeout = 60
 }
 
 ########################
@@ -179,7 +178,7 @@ module "deploy_trigger" {
   handler                   = "handler.handler"
   runtime                   = "nodejs14.x"
   memory_size               = 1024
-  timeout                   = local.lambda_timeout
+  timeout                   = var.lambda_timeout
   publish                   = true
   tags                      = var.tags
   role_permissions_boundary = var.lambda_role_permissions_boundary
@@ -282,7 +281,7 @@ resource "aws_sqs_queue" "this" {
   # SQS visibility_timeout_seconds must be >= lambda fn timeout,
   # aws reccomends at least 6 times the lambda
   # https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-queueconfig
-  visibility_timeout_seconds = local.lambda_timeout * 6
+  visibility_timeout_seconds = var.lambda_timeout * 6
 
   tags = var.tags
 }

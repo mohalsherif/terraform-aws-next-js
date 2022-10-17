@@ -77,6 +77,12 @@ variable "lambda_attach_to_vpc" {
   default     = false
 }
 
+variable "lamda_timeout_static_deploy" {
+  description = "The timeout for the static deploy lambda"
+  type        = number
+  default     = 60
+}
+
 variable "vpc_subnet_ids" {
   type        = list(string)
   description = "The list of VPC subnet IDs to attach the Lambda functions. lambda_attach_to_vpc should be set to true for these to be applied."

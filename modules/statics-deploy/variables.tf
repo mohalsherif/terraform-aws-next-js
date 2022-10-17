@@ -72,3 +72,8 @@ variable "debug_use_local_packages" {
 variable "tf_next_module_root" {
   type = string
 }
+
+variable "lambda_timeout" {
+  type    = number
+  default = 60
+}

@@ -40,6 +40,7 @@ module "statics_deploy" {
 
   lambda_role_permissions_boundary = var.lambda_role_permissions_boundary
   use_awscli_for_static_upload     = var.use_awscli_for_static_upload
+  lambda_timeout = var.lamda_timeout_static_deploy
 
   deployment_name = var.deployment_name
   tags            = var.tags
